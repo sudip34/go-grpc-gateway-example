@@ -70,3 +70,14 @@ protoc:
 make protoc 
 ```
 
+
+### for main.go()
+
+- first install the `protobuf` & `genproto`
+
+```
+go get google.golang.org/protobuf 
+go get google.golang.org/genproto 
+
+```
+
