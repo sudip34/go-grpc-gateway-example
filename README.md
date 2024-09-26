@@ -15,6 +15,8 @@
 
 To To compile this code we need to copy the `Date` definition file and add it to our project. You can create a folder called `google/api` under the `proto` folder and copy the code under the filename `date.proto`.
 
+### Lets compile the code 
+
 ```
 go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.28
 ```
