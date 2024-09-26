@@ -18,6 +18,55 @@ To To compile this code we need to copy the `Date` definition file and add it to
 ### Lets compile the code 
 
 ```
-go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.28
+go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+```
+> this will set defalut
+
+- $GOPATH/bin (if $GOPATH is set), or
+- $HOME/go/bin (the default location for Go binaries).
+
+> if not the path default updated then for bash 
+```
+ls $HOME/go/bin/protoc-gen-go
+```
+
+> add Go bin directory to `PATH` . open bash `nano ~/.bash` or other shell if your are using
+
+```
+export PATH=$PATH:$HOME/go/bin 
+
+```
+> Reload the shell
+
+``` 
+source ~/.bashrc 
+
+```
+
+> verify 
+
+```
+protoc-gen-go --version
+
+```
+
+***create a Makefile*** to compile the `proto` files
+```
+# Makefile
+
+protoc:
+	cd proto && protoc --go_out=../protogen/golang --go_opt=paths=source_relative \
+	./**/*.proto
+```
+
+
+> `--go_out` is the output directory
+> `--go_opt`  to specify Go package paths
+> `./**/*.proto` glob expands the current directory and includes all `proto` files for the compilation process.
+
+## Run makefile 
+
+```
+make protoc 
 ```
 

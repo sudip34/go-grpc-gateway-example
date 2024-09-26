@@ -4,8 +4,8 @@
    
     option go_package = "github.com/sudip34/go-grpc-gateway-example/protogen/golang/orders";
     
-    import "product/product.proto"
-    import "google/api/date.proto"
+    import "product/product.proto";
+    import "google/api/date.proto";
 
     message Order {
       uint64 order_id = 1 [json_name = "order_id"];
