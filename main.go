@@ -7,8 +7,8 @@ import (
 	"google.golang.org/genproto/googleapis/type/date"
 	"google.golang.org/protobuf/encoding/protojson"
 	
-	"github.com/sudip34/go-grpc-gateway-example/tree/main/protogen/golang/product"
-  "github.com/sudip34/go-grpc-gateway-example/tree/main/protogen/golang/orders"
+  "github.com/sudip34/go-grpc-gateway-example/protogen/golang/orders"
+	"github.com/sudip34/go-grpc-gateway-example/protogen/golang/product"
 )
 
 func main() {
