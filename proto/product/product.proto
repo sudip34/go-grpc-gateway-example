@@ -11,7 +11,7 @@
       DRINK = 2;
     }
     message Product {
-      uint64 order_id = 1 [json_name = "order_id"];
+      uint64 product_id = 1 [json_name = "product_id"];
       string product_name = 2 [json_name = "product_name"];
       ProductType product_type = 5 [json_name = "product_type"];
     }

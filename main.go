@@ -16,9 +16,9 @@ func main() {
 	orderItem := orders.Order {
     OrderId: 10,
 		CustomerId: 11,
-		isActive: true,
-		OrderDate: &date.Date{year: 2021, Month: 1, Day: 1},
-		Products: []*product.Product{
+		IsActive: true,
+		OrderDate: &date.Date{Year: 2024, Month: 1, Day: 1},
+		Produtcs: []*product.Product{
 			{ProductId: 1, ProductName: "Benana", ProductType: product.ProductType_FOOD},
 		},
 	}
