@@ -8,7 +8,7 @@ import(
 
 
 type DB struct {
-	collection []*orders.order 
+	collection []*orders.Order 
 }
 
 func NewDB() *DB {
