@@ -116,7 +116,17 @@ protoc:
   ./**/*.proto
 ```
 
+
 ```
 make protoc 
 
+```
+
+
+
+> create 2 directories `cmd/server` and `internal`
+
+```
+mkdir -p cmd/server  internal 
+touch cmd/server/main.go internal/{db,orderservice}.go 
 ```
