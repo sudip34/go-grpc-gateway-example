@@ -1,9 +1,8 @@
-module github.com/sudip34/go-rpc-gateway-example
+module github.com/sudip34/go-grpc-gateway-example
 
 go 1.21.1
 
 require (
-	github.com/sudip34/go-grpc-gateway-example v0.0.0-20240928124835-3f919b4a8ecd
 	google.golang.org/genproto v0.0.0-20240924160255-9d4c2d233b61
 	google.golang.org/grpc v1.67.0
 	google.golang.org/protobuf v1.34.2
