@@ -146,3 +146,10 @@ go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2
 
 ```
 
+- Now We need to add two new files into our `proto/google/api`  : `annotation.proto` , `http.proto`
+- we need to make small adjustments to our service definition 
+```
+curl -L https://raw.githubusercontent.com/googleapis/googleapis/master/google/api/annotations.proto -o proto/google/api/annotations.proto
+curl -L https://raw.githubusercontent.com/googleapis/googleapis/master/google/api/http.proto -o proto/google/api/http.proto 
+```
+
