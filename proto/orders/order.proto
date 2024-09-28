@@ -22,7 +22,7 @@
    message Empty{}
 
    message PayloadWithSingleOrder {
-     Oreder order = 1;
+     Order order = 1;
    }
 
    service Orders {

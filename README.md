@@ -93,6 +93,7 @@ go get google.golang.org/genproto
 
 - To compile `service` definition we need a specific gRPC-specific binary `protoc-gen-go-grpc`
 
+
 ```
 go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest 
 ``` 
@@ -106,5 +107,16 @@ go get google.golang.org/grpc
 ``` 
 
 
+### update the Makefile
 
+```
+protoc:
+	cd proto && protoc --go_out=../protogen/golang --go_opt=paths=source_relative \
+  --go-grpc_out=../protogen/golang --go-grpc_opt=paths=source_relative \
+  ./**/*.proto
+```
 
+```
+make protoc 
+
+```
