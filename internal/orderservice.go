@@ -14,12 +14,12 @@ import (
 
 type OrderService struct {
 	db *DB
-	orders.UnimplementedOrderServer
+	orders.UnimplementedOrdersServer
 }
 
 // NewOrderServie creates a new OrderService
 
-func NewOrderServie(mydb *DB) OrderServie {
+func NewOrderService(mydb *DB) OrderService {
 	return OrderService {db: mydb}
 }
 
