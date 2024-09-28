@@ -29,7 +29,7 @@
    service Orders {
      rpc AddOrder(PayloadWithSingleOrder) returns(Empty) {
        option (google.api.http) = {
-          post: "/vo/orders",
+          post: "/v0/orders",
           body: "*"
        };
      }

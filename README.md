@@ -153,3 +153,25 @@ curl -L https://raw.githubusercontent.com/googleapis/googleapis/master/google/ap
 curl -L https://raw.githubusercontent.com/googleapis/googleapis/master/google/api/http.proto -o proto/google/api/http.proto 
 ```
 
+
+
+#### Now will craete protobuf for the gRPC - Gateway and for that will make change in the Makefile
+
+```
+protoc:
+	cd proto && protoc --go_out=../protogen/golang --go_opt=paths=source_relative \
+	--go-grpc_out=../protogen/golang --go-grpc_opt=paths=source_relative \
+	--grpc-gateway_out=../protogen/golang --grpc-gateway_opt paths=source_relative \
+	--grpc-gateway_opt generate_unbound_methods=true \
+	./**/*.proto  
+```
+
+
+## Client Server 
+
+#### Create API gateway server
+```
+mkdir cmd/client
+touch cmd/client/main.go 
+
+```
