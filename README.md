@@ -135,7 +135,7 @@ touch cmd/server/main.go internal/{db,orderservice}.go
 
 ## Set up the API Gateway 
 
-> gRPC do supprt client with RESTful JSON architecture well
+> gRPC does not supprt client with RESTful JSON architecture well
 > to support we will use google library ***grpc-gateway*** [https://github.com/grpc-ecosystem/grpc-gateway]
 
 ```
