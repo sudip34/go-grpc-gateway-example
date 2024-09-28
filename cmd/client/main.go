@@ -13,9 +13,13 @@ import (
 	"google.golang.org/grpc/credentials/insecure"
  )
 
+
+var orderServiceAddr string
+
  func main() {
 	 // Setup a connection to the server
-	 orderServiceAddr := "localhost:50051"
+   //	 orderServiceAddr := "localhost:50051"
+	 fmt.Println("Connecting to order server via", orderServiceAddr)
 	 conn, err := grpc.Dial(orderServiceAddr, grpc.WithTransportCredentials(insecure.NewCredentials()))
 
 	 if err != nil {
