@@ -175,3 +175,15 @@ mkdir cmd/client
 touch cmd/client/main.go 
 
 ```
+
+### Now we need to update 3 following files
+
+- order.proto
+- db.go 
+- orderservice.go 
+
+for the following request:
+
+- GetOrder
+- UpdateOrder
+- RemoveOrder

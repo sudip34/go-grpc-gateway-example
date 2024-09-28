@@ -27,11 +27,32 @@
    }
 
    service Orders {
+    
      rpc AddOrder(PayloadWithSingleOrder) returns(Empty) {
        option (google.api.http) = {
           post: "/v0/orders",
           body: "*"
        };
      }
+
+     rpc GetOrder(PayloadWithSingleOrder) returns(Empty) {
+       option (google.api.http) = {
+          get: "/v0/orders/{order_id}"
+       };
+     }
+
+     rpc UpdateOrder(PayloadWithSingleOrder) returns (Empty) {
+       option (google.api.http) = {
+            put: "/v0/orders",
+            body: "*"
+       }
+     }
+
+     rpc RemoveOrder(PayloadWithSingleOrder) returns(Empty) {
+       option (google.api.http) = {
+          delete: "/v0/orders/{order_id}"
+       };
+     }
+     
    }
 

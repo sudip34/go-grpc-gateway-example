@@ -27,3 +27,47 @@ func (mydb *DB) AddOrder(order *orders.Order) error {
 	mydb.collection = append(mydb.collection, order)
 	return nil
 }
+
+func (mydb *DB) GetOrderById(orderID uint64) *orders.Order {
+	
+	for _, myorder := range mydb.collection {
+		if myorder.OrderId == OrderID {
+			return myorder
+		}
+	}
+	return nil
+}
+
+
+func (mydb *DB) GetOrdersByIds(orderIDs []uint64) []*orders.Order {
+	filtered := make([]*orders.Order, 0)
+	for _, idx := range orderIDs {
+   
+		for _, myorder := range mydb.cllection {
+			if myorder.OrderId == idx {
+				filtered = append(fitered,myorder)
+				break
+			}
+		}
+	}
+	return filtered 
+}
+
+func (mydb *DB) UpdateOrder(order *orders.Order) error {
+	for i, myorder := range mydb.collection {
+		if myorder.OrderId == order.OrderId {
+				mydb.collection[i] = order
+				return 
+		}
+	}
+}
+
+func (mydb *DB) RemoveOrder(orderID uint64) {
+	filtered := make([]*orders.Order, 0, len(mydb.collection)-1)
+   
+	for i := range mydb.cllection {
+		if mydb.collection[i].OrderId != orderId {
+			filtered = append(fitered,mydb.collection[i])
+	}
+	mydb.collection = filtered
+}
