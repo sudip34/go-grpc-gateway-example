@@ -81,3 +81,30 @@ go get google.golang.org/genproto
 
 ```
 
+
+
+
+
+### For now we use _service_ for method or function in PROTOCOL-BUFFER 
+
+- `service`
+
+- in a `service` we can use the object  as `message`
+
+- To compile `service` definition we need a specific gRPC-specific binary `protoc-gen-go-grpc`
+
+```
+go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest 
+``` 
+
+
+### Install gRPC dependency
+
+
+``` 
+go get google.golang.org/grpc 
+``` 
+
+
+
+

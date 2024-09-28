@@ -15,3 +15,17 @@
       google.type.Date order_date = 5 [json_name = "order_date"];
 
     }
+
+   // a generic empty message that you can re-use to avoid defining duplicated empty messages in apis
+   //
+
+   message Empty{}
+
+   message PayloadWithSingleOrder {
+     Oreder order = 1;
+   }
+
+   service Orders {
+     rpc AddOrder(PayloadWithSingleOrder) returns(Empty){}
+   }
+
