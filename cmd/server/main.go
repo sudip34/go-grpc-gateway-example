@@ -6,7 +6,7 @@ import (
 
 
   "github.com/sudip34/go-grpc-gateway-example/internal"
-  "github.com/sudip34/go-rpc-gateway-example/protogen/golang/orders"
+  "github.com/sudip34/go-grpc-gateway-example/protogen/golang/orders"
 	"google.golang.org/grpc"
 )
 
