@@ -28,10 +28,10 @@ func (mydb *DB) AddOrder(order *orders.Order) error {
 	return nil
 }
 
-func (mydb *DB) GetOrderById(orderID uint64) *orders.Order {
+func (mydb *DB) GetOrderByID(orderID uint64) *orders.Order {
 	
 	for _, myorder := range mydb.collection {
-		if myorder.OrderId == OrderID {
+		if myorder.OrderId == orderID {
 			return myorder
 		}
 	}
@@ -43,9 +43,9 @@ func (mydb *DB) GetOrdersByIds(orderIDs []uint64) []*orders.Order {
 	filtered := make([]*orders.Order, 0)
 	for _, idx := range orderIDs {
    
-		for _, myorder := range mydb.cllection {
+		for _, myorder := range mydb.collection {
 			if myorder.OrderId == idx {
-				filtered = append(fitered,myorder)
+				filtered = append(filtered,myorder)
 				break
 			}
 		}
@@ -53,11 +53,12 @@ func (mydb *DB) GetOrdersByIds(orderIDs []uint64) []*orders.Order {
 	return filtered 
 }
 
-func (mydb *DB) UpdateOrder(order *orders.Order) error {
-	for i, myorder := range mydb.collection {
-		if myorder.OrderId == order.OrderId {
-				mydb.collection[i] = order
-				return 
+
+func (d *DB) UpdateOrder(order *orders.Order) {
+	for i, o := range d.collection {
+		if o.OrderId == order.OrderId {
+			d.collection[i] = order
+			return
 		}
 	}
 }
@@ -65,9 +66,10 @@ func (mydb *DB) UpdateOrder(order *orders.Order) error {
 func (mydb *DB) RemoveOrder(orderID uint64) {
 	filtered := make([]*orders.Order, 0, len(mydb.collection)-1)
    
-	for i := range mydb.cllection {
-		if mydb.collection[i].OrderId != orderId {
-			filtered = append(fitered,mydb.collection[i])
-	}
+	for i := range mydb.collection {
+		if mydb.collection[i].OrderId != orderID {
+			filtered = append(filtered,mydb.collection[i])
+	 }
+ }
 	mydb.collection = filtered
 }

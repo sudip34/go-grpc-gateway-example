@@ -2,7 +2,9 @@ package internal
 
 import (
 	"context"
+	"fmt"
 	"log"
+
 
   "github.com/sudip34/go-grpc-gateway-example/protogen/golang/orders"
 )
@@ -37,20 +39,20 @@ func (or *OrderService) AddOrder(_ context.Context, request *orders.PayloadWithS
 func (or *OrderService) GetOrder(_ context.Context, request *orders.PayloadWithOrderID) (*orders.PayloadWithSingleOrder, error){
 		log.Printf("Recevied a Get-order request")
 
-		order := or.db.GetOrderById(req.GetOrderId())
+		order := or.db.GetOrderByID(request.GetOrderId())
 
 		if order == nil {
-			return nil, fmt.Errorf("order not found for orderID: %d", req.GetOrderId())
+			return nil, fmt.Errorf("order not found for orderID: %d", request.GetOrderId())
 		}
 
-		return &order.PayloadWithSingleOrder{Order: order}, nil
+		return &orders.PayloadWithSingleOrder{Order: order}, nil
 }
 
 
 func (or *OrderService) UpdateOrder(_ context.Context, request *orders.PayloadWithSingleOrder) (*orders.Empty, error){
 		log.Printf("Recevied a Update-order request")
-
-		return &order.Empty{},nil
+                or.db.UpdateOrder(request.GetOrder())
+		return &orders.Empty{},nil
 }
 
 
